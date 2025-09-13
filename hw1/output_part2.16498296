@@ -1,0 +1,101 @@
+=== part 1 ===
+Processes = 1
+n = 10000000000, p = 1, pi = 3.1415926535897949, relative error = 5.65e-16, time (sec) =  16.7381
+Processes = 2
+n = 10000000000, p = 2, pi = 3.1415926535897549, relative error = 1.22e-14, time (sec) =   8.5819
+Processes = 4
+n = 10000000000, p = 4, pi = 3.1415926535898286, relative error = 1.13e-14, time (sec) =   4.4096
+Processes = 8
+n = 10000000000, p = 8, pi = 3.1415926535897762, relative error = 5.37e-15, time (sec) =   2.2889
+Processes = 16
+[c503:3004890:0:3004890]       ud_ep.c:278  Fatal: UD endpoint 0xcef670 to <no debug data>: unhandled timeout error
+[c505:387854:0:387854]       ud_ep.c:278  Fatal: UD endpoint 0xd39670 to <no debug data>: unhandled timeout error
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 0 PID 3004890 RUNNING AT c503
+=   KILLED BY SIGNAL: 6 (Aborted)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 1 PID 3004891 RUNNING AT c503
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 2 PID 3004892 RUNNING AT c503
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 3 PID 3004893 RUNNING AT c503
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+Processes = 32
+n = 10000000000, p = 32, pi = 3.1415926535897754, relative error = 5.65e-15, time (sec) =  26.3136
+Processes = 64
+slurmstepd: error: *** JOB 16498296 ON c503 CANCELLED AT 2025-09-12T22:40:01 DUE TO TIME LIMIT ***
+slurmstepd: error: *** STEP 16498296.6 ON c503 CANCELLED AT 2025-09-12T22:40:01 DUE TO TIME LIMIT ***
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 28 PID 3581557 RUNNING AT c537
+=   KILLED BY SIGNAL: 1 (Hangup)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 44 PID 218809 RUNNING AT c543
+=   KILLED BY SIGNAL: 1 (Hangup)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 4 PID 388770 RUNNING AT c505
+=   KILLED BY SIGNAL: 1 (Hangup)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 52 PID 3619027 RUNNING AT c548
+=   KILLED BY SIGNAL: 1 (Hangup)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 8 PID 3279452 RUNNING AT c520
+=   KILLED BY SIGNAL: 1 (Hangup)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 20 PID 3250169 RUNNING AT c527
+=   KILLED BY SIGNAL: 1 (Hangup)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 60 PID 3970885 RUNNING AT c553
+=   KILLED BY SIGNAL: 1 (Hangup)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 24 PID 296371 RUNNING AT c531
+=   KILLED BY SIGNAL: 1 (Hangup)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 0 PID 3005873 RUNNING AT c503
+=   KILLED BY SIGNAL: 1 (Hangup)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 12 PID 1971779 RUNNING AT c521
+=   KILLED BY SIGNAL: 1 (Hangup)
+===================================================================================
