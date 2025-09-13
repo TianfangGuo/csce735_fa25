@@ -19,8 +19,11 @@
 #
 module load intel             # load Intel software stack 
 #
+echo "=== part 1 ==="
 echo "Processes = 1"
 mpirun -np  1 ./compute_pi_mpi.exe 10000000000
+echo "Processes = 2"
+mpirun -np  2 ./compute_pi_mpi.exe 10000000000
 echo "Processes = 4"
 mpirun -np  4 ./compute_pi_mpi.exe 10000000000
 echo "Processes = 8"
@@ -31,6 +34,7 @@ echo "Processes = 32"
 mpirun -np 32 ./compute_pi_mpi.exe 10000000000
 echo "Processes = 64"
 mpirun -np 64 ./compute_pi_mpi.exe 10000000000
+echo "=== part 2 ==="
 echo "Processes = 64"
 mpirun -np 64 ./compute_pi_mpi.exe 1000000000
 echo "Processes = 64"
