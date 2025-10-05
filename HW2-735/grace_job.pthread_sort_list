@@ -5,7 +5,7 @@
 #
 ##NECESSARY JOB SPECIFICATIONS
 #SBATCH --job-name=JobExample2       #Set the job name to "JobExample2"
-#SBATCH --time=0:30:00               #Set the wall clock limit to 6hr and 30min
+#SBATCH --time=1:00:00               #Set the wall clock limit to 6hr and 30min
 #SBATCH --nodes=1                    #Request 1 node
 #SBATCH --ntasks-per-node=48          #Request 8 tasks/cores per node
 #SBATCH --mem=8G                     #Request 8GB per node 
@@ -19,15 +19,28 @@
 #
 module load intel         # load Intel software stack 
 #
-./pthread_sort_list.exe 28 0
-./pthread_sort_list.exe 28 1
-./pthread_sort_list.exe 28 2
-./pthread_sort_list.exe 28 3
-./pthread_sort_list.exe 28 4
-./pthread_sort_list.exe 28 5
-./pthread_sort_list.exe 28 6
-./pthread_sort_list.exe 28 7
-./pthread_sort_list.exe 28 8
-./pthread_sort_list.exe 28 10
-##
+./sort_list.exe 28 0
+./sort_list.exe 28 1
+./sort_list.exe 28 2
+./sort_list.exe 28 4
+./sort_list.exe 28 6
+./sort_list.exe 28 8
+./sort_list.exe 28 10
+#
+./sort_list.exe 20 0
+./sort_list.exe 20 1
+./sort_list.exe 20 2
+./sort_list.exe 20 4
+./sort_list.exe 20 6
+./sort_list.exe 20 8
+./sort_list.exe 20 10
+#
+./sort_list.exe 12 0
+./sort_list.exe 12 1
+./sort_list.exe 12 2
+./sort_list.exe 12 4
+./sort_list.exe 12 6
+./sort_list.exe 12 8
+./sort_list.exe 12 10
+#
 

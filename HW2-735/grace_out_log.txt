@@ -1,0 +1,5 @@
+List Size = 16, Threads = 2, error = 0, time (sec) =   0.0010, qsort_time =   0.0000
+List Size = 16, Threads = 4, error = 0, time (sec) =   0.0009, qsort_time =   0.0000
+List Size = 16, Threads = 8, error = 0, time (sec) =   0.0011, qsort_time =   0.0000
+List Size = 1048576, Threads = 16, error = 0, time (sec) =   0.0122, qsort_time =   0.1103
+List Size = 16777216, Threads = 256, error = 0, time (sec) =   0.1325, qsort_time =   2.1385
