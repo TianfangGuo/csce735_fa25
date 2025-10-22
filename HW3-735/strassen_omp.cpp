@@ -138,7 +138,7 @@ Matrix Matrix::strassens_product(Matrix A, Matrix B) {
 Matrix Matrix::standard_product(Matrix& A, Matrix& B) {
     if (A.ncols != B.nrows) matrix_error(5); 
     Matrix C(A.nrows,B.ncols);
-//#pragma omp parallel for if(A.nrows>128) 
+//#pragma omp parallel for if(A.nrows>64) 
     for (int i = 0; i < C.nrows; i++) {
         for (int j = 0; j < C.ncols; j++) {
 	    C.elements[i][j] = 0.0;
@@ -155,7 +155,7 @@ Matrix Matrix::addition(Matrix& A, Matrix& B) {
     if (A.nrows != B.nrows) A.matrix_error(8); 
     if (A.ncols != B.ncols) A.matrix_error(9); 
     Matrix C(A.nrows,A.ncols);  
-// #pragma omp parallel for if(A.nrows>128)
+//#pragma omp parallel for if(A.nrows>64)
     for (int i = 0; i < C.nrows; i++) {
         for (int j = 0; j < C.ncols; j++) {
 	    C.elements[i][j] = A.elements[i][j]+B.elements[i][j];
@@ -170,7 +170,7 @@ Matrix Matrix::subtraction(Matrix& A, Matrix& B) {
     if (A.nrows != B.nrows) A.matrix_error(88); 
     if (A.ncols != B.ncols) A.matrix_error(98); 
     Matrix C(A.nrows,A.ncols);  
-//#pragma omp parallel for if(A.nrows>128)
+//#pragma omp parallel for if(A.nrows>64)
     for (int i = 0; i < C.nrows; i++) {
         for (int j = 0; j < C.ncols; j++) {
 	    C.elements[i][j] = A.elements[i][j]-B.elements[i][j];
@@ -185,7 +185,7 @@ int Matrix::compare_matrix(Matrix& A, Matrix& B) {
     int error = 0;
     if (A.nrows != B.nrows) return error; 
     if (A.ncols != B.ncols) return error; 
-//#pragma omp parallel for if(A.nrows>128)
+//#pragma omp parallel for if(A.nrows>64)
     for (int i = 0; i < A.nrows; i++) {
         for (int j = 0; j < A.ncols; j++) {
             if (fabs(A.elements[i][j] - B.elements[i][j]) > TOL) error = 1;
@@ -199,7 +199,7 @@ int Matrix::compare_matrix(Matrix& A, Matrix& B) {
 Matrix Matrix::extract_submatrix(int row_first, int row_last, 
 			  	 int col_first, int col_last) {
     Matrix S(row_last-row_first+1, col_last-col_first+1); 
-//#pragma omp parallel for if(S.nrows>128)
+//#pragma omp parallel for if(S.nrows>64)
     for (int i = 0; i < S.nrows; i++) {
         for (int j = 0; j < S.ncols; j++) {
 	    S.elements[i][j] = elements[row_first+i][col_first+j];
@@ -216,7 +216,7 @@ void Matrix::update_submatrix(Matrix& S, int row_first, int row_last,
     if (S.ncols != (col_last-col_first+1)) S.matrix_error(101);
     if (nrows < row_last) S.matrix_error(102); 
     if (ncols < col_last) S.matrix_error(103); 
-//#pragma omp parallel for if(S.nrows>128)
+//#pragma omp parallel for if(S.nrows>64)
     for (int i = 0; i < S.nrows; i++) {
         for (int j = 0; j < S.ncols; j++) {
 	    elements[row_first+i][col_first+j] = S.elements[i][j];
@@ -227,7 +227,7 @@ void Matrix::update_submatrix(Matrix& S, int row_first, int row_last,
 // Initialize matrix
 // - for testing purpose only
 void Matrix::initialize_matrix(double factor) {
-//#pragma omp parallel for if(nrows>128)
+//#pragma omp parallel for if(nrows>64)
     	for (int i = 0; i < nrows; i++) {
         for (int j = 0; j < ncols; j++) {
             elements[i][j]= i + factor*j;

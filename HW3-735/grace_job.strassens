@@ -9,7 +9,7 @@
 #SBATCH --nodes=1                    #Request 1 node
 #SBATCH --ntasks-per-node=48          #Request 8 tasks/cores per node
 #SBATCH --mem=100G                     #Request 8GB per node 
-#SBATCH --output=leaf8/output.%j      #Send stdout/err to "output.[jobID]" 
+#SBATCH --output=sweep/output.%j      #Send stdout/err to "output.[jobID]" 
 #
 ##OPTIONAL JOB SPECIFICATIONS
 ##SBATCH --mail-type=ALL              #Send email on all job events
@@ -24,26 +24,35 @@ export OMP_NUM_THREADS=$SLURM_NTASKS_PER_NODE
 ./strassen_omp.exe 10 5
 ./strassen_omp.exe 10 6
 ./strassen_omp.exe 10 7
+./strassen_omp.exe 10 8
 
 ./strassen_omp.exe 11 4
 ./strassen_omp.exe 11 5
 ./strassen_omp.exe 11 6
 ./strassen_omp.exe 11 7
+./strassen_omp.exe 11 8
+
 
 ./strassen_omp.exe 12 4
 ./strassen_omp.exe 12 5
 ./strassen_omp.exe 12 6
 ./strassen_omp.exe 12 7
+./strassen_omp.exe 12 8
+
 
 ./strassen_omp.exe 13 4
 ./strassen_omp.exe 13 5
 ./strassen_omp.exe 13 6
 ./strassen_omp.exe 13 7
+./strassen_omp.exe 13 8
+
 
 ./strassen_omp.exe 14 4
 ./strassen_omp.exe 14 5
 ./strassen_omp.exe 14 6
 ./strassen_omp.exe 14 7
+./strassen_omp.exe 14 8
+
 
 
 

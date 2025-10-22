@@ -1,0 +1,13 @@
+Matrix size = 1024, Leaf matrix size = 16, Strassen's (s) =   0.4473 s, Standard =   3.3846 s, Error = 0
+Matrix size = 1024, Leaf matrix size = 32, Strassen's (s) =   0.5717 s, Standard =   3.6861 s, Error = 0
+Matrix size = 1024, Leaf matrix size = 64, Strassen's (s) =   0.8613 s, Standard =   3.8028 s, Error = 0
+Matrix size = 1024, Leaf matrix size = 128, Strassen's (s) =   0.9699 s, Standard =   4.0637 s, Error = 0
+Matrix size = 2048, Leaf matrix size = 16, Strassen's (s) =   0.6804 s,Error check SKIPPED
+Matrix size = 2048, Leaf matrix size = 32, Strassen's (s) =   1.1632 s,Error check SKIPPED
+Matrix size = 2048, Leaf matrix size = 64, Strassen's (s) =   0.6337 s,Error check SKIPPED
+Matrix size = 2048, Leaf matrix size = 128, Strassen's (s) =   1.1328 s,Error check SKIPPED
+Matrix size = 4096, Leaf matrix size = 16, Strassen's (s) =   2.7540 s,Error check SKIPPED
+Matrix size = 4096, Leaf matrix size = 32, Strassen's (s) =   2.9806 s,Error check SKIPPED
+Matrix size = 4096, Leaf matrix size = 64, Strassen's (s) =   2.1845 s,Error check SKIPPED
+Matrix size = 4096, Leaf matrix size = 128, Strassen's (s) =   2.2029 s,Error check SKIPPED
+slurmstepd: error: *** JOB 16835446 ON c038 CANCELLED AT 2025-10-22T16:16:10 ***

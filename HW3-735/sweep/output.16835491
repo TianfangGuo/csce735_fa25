@@ -1,0 +1,25 @@
+Matrix size = 1024, Leaf matrix size = 16, Strassen's (s) =  45.9663 s, Standard =   1.1597 s, Error = 0
+Matrix size = 1024, Leaf matrix size = 32, Strassen's (s) =  26.9812 s, Standard =   1.1732 s, Error = 0
+Matrix size = 1024, Leaf matrix size = 64, Strassen's (s) =  33.2872 s, Standard =   0.4882 s, Error = 0
+Matrix size = 1024, Leaf matrix size = 128, Strassen's (s) =  48.3578 s, Standard =   0.5479 s, Error = 0
+Matrix size = 1024, Leaf matrix size = 256, Strassen's (s) =   2.5594 s, Standard =   0.7870 s, Error = 0
+Matrix size = 2048, Leaf matrix size = 16, Strassen's (s) = 329.1955 s,Error check SKIPPED
+Matrix size = 2048, Leaf matrix size = 32, Strassen's (s) =   0.8903 s,Error check SKIPPED
+Matrix size = 2048, Leaf matrix size = 64, Strassen's (s) =   1.4497 s,Error check SKIPPED
+Matrix size = 2048, Leaf matrix size = 128, Strassen's (s) =   0.9044 s,Error check SKIPPED
+Matrix size = 2048, Leaf matrix size = 256, Strassen's (s) =   1.3821 s,Error check SKIPPED
+Matrix size = 4096, Leaf matrix size = 16, Strassen's (s) =   2.9448 s,Error check SKIPPED
+Matrix size = 4096, Leaf matrix size = 32, Strassen's (s) =   2.1185 s,Error check SKIPPED
+Matrix size = 4096, Leaf matrix size = 64, Strassen's (s) =   2.2593 s,Error check SKIPPED
+Matrix size = 4096, Leaf matrix size = 128, Strassen's (s) =   2.4125 s,Error check SKIPPED
+Matrix size = 4096, Leaf matrix size = 256, Strassen's (s) =   2.7349 s,Error check SKIPPED
+Matrix size = 8192, Leaf matrix size = 16, Strassen's (s) =  14.2456 s,Error check SKIPPED
+Matrix size = 8192, Leaf matrix size = 32, Strassen's (s) =  11.4970 s,Error check SKIPPED
+Matrix size = 8192, Leaf matrix size = 64, Strassen's (s) =  10.0215 s,Error check SKIPPED
+Matrix size = 8192, Leaf matrix size = 128, Strassen's (s) =  10.7316 s,Error check SKIPPED
+Matrix size = 8192, Leaf matrix size = 256, Strassen's (s) =  10.6703 s,Error check SKIPPED
+Matrix size = 16384, Leaf matrix size = 16, Strassen's (s) =  83.3174 s,Error check SKIPPED
+Matrix size = 16384, Leaf matrix size = 32, Strassen's (s) =  58.5864 s,Error check SKIPPED
+Matrix size = 16384, Leaf matrix size = 64, Strassen's (s) =  59.7163 s,Error check SKIPPED
+Matrix size = 16384, Leaf matrix size = 128, Strassen's (s) =  57.3281 s,Error check SKIPPED
+Matrix size = 16384, Leaf matrix size = 256, Strassen's (s) =  59.6950 s,Error check SKIPPED
