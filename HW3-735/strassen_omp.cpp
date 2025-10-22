@@ -80,27 +80,31 @@ Matrix Matrix::strassens_product(Matrix A, Matrix B) {
 
 	// Compute products M1, M2, ..., M7
 	//this section is parallelized
-	#pragma omp task
-	Matrix M1 = Matrix::strassens_product(
+	Matrix M1(0,0), M2(0,0), M3(0,0), M4(0,0), M5(0,0), M6(0,0), M7(0,0);
+
+	#pragma omp task shared(M1)
+	M1 = Matrix::strassens_product(
 			Matrix::addition(A11,A22), Matrix::addition(B11,B22));
-	#pragma omp task
-	Matrix M2 = Matrix::strassens_product(
+	#pragma omp task shared(M2)
+	M2 = Matrix::strassens_product(
 			Matrix::addition(A21,A22), B11); 
-	#pragma omp task
-	Matrix M3 = Matrix::strassens_product(
+	#pragma omp task shared(M3)
+	M3 = Matrix::strassens_product(
 			A11, Matrix::subtraction(B12,B22));
-	#pragma omp task
-	Matrix M4 = Matrix::strassens_product(
+	#pragma omp task shared(M4)
+	M4 = Matrix::strassens_product(
 			A22, Matrix::subtraction(B21,B11));
-	#pragma omp task
-	Matrix M5 = Matrix::strassens_product(
+	#pragma omp task shared(M5)
+	M5 = Matrix::strassens_product(
 			Matrix::addition(A11,A12), B22); 
-	#pragma omp task
-	Matrix M6 = Matrix::strassens_product(
+	#pragma omp task shared(M6)
+	M6 = Matrix::strassens_product(
 			Matrix::subtraction(A21,A11), Matrix::addition(B11,B12));
-	#pragma omp task
-	Matrix M7 = Matrix::strassens_product(
+	#pragma omp task shared(M7)
+	M7 = Matrix::strassens_product(
 			Matrix::subtraction(A12,A22), Matrix::addition(B21,B22));
+
+	#pragma omp taskwait
 
 	// Compute blocks of C: C11, C12, C21, C22
 	Matrix C11a = Matrix::addition(M1,M4);
@@ -274,7 +278,7 @@ int main(int argc, char *argv[]) {
     // Initialize matrices A and B 
     Matrix A(matrix_size,matrix_size); A.initialize_matrix(1.0); 
     Matrix B(matrix_size,matrix_size); B.initialize_matrix(-1.0); 
-
+    Matrix C(0,0);
     // ----------------------------------
     // Strassen's matrix multiplication
     start = omp_get_wtime();
@@ -282,7 +286,7 @@ int main(int argc, char *argv[]) {
 {
   #pragma omp single
     {	
-    	Matrix C = Matrix::strassens_product(A,B); 
+    	C = Matrix::strassens_product(A,B); 
     }
 }
     strassens_time = omp_get_wtime() - start;
