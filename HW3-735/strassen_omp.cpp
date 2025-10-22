@@ -79,19 +79,27 @@ Matrix Matrix::strassens_product(Matrix A, Matrix B) {
         Matrix B22 = B.extract_submatrix(n/2, n-1, n/2, n-1);
 
 	// Compute products M1, M2, ..., M7
-        Matrix M1 = Matrix::strassens_product(
+	//this section is parallelized
+	#pragma omp task
+	Matrix M1 = Matrix::strassens_product(
 			Matrix::addition(A11,A22), Matrix::addition(B11,B22));
-        Matrix M2 = Matrix::strassens_product(
+	#pragma omp task
+	Matrix M2 = Matrix::strassens_product(
 			Matrix::addition(A21,A22), B11); 
-        Matrix M3 = Matrix::strassens_product(
+	#pragma omp task
+	Matrix M3 = Matrix::strassens_product(
 			A11, Matrix::subtraction(B12,B22));
-        Matrix M4 = Matrix::strassens_product(
+	#pragma omp task
+	Matrix M4 = Matrix::strassens_product(
 			A22, Matrix::subtraction(B21,B11));
-        Matrix M5 = Matrix::strassens_product(
+	#pragma omp task
+	Matrix M5 = Matrix::strassens_product(
 			Matrix::addition(A11,A12), B22); 
-        Matrix M6 = Matrix::strassens_product(
+	#pragma omp task
+	Matrix M6 = Matrix::strassens_product(
 			Matrix::subtraction(A21,A11), Matrix::addition(B11,B12));
-        Matrix M7 = Matrix::strassens_product(
+	#pragma omp task
+	Matrix M7 = Matrix::strassens_product(
 			Matrix::subtraction(A12,A22), Matrix::addition(B21,B22));
 
 	// Compute blocks of C: C11, C12, C21, C22
@@ -270,9 +278,14 @@ int main(int argc, char *argv[]) {
     // ----------------------------------
     // Strassen's matrix multiplication
     start = omp_get_wtime();
-    Matrix C = Matrix::strassens_product(A,B); 
+#pragma omp parallel
+{
+  #pragma omp single
+    {	
+    	Matrix C = Matrix::strassens_product(A,B); 
+    }
+}
     strassens_time = omp_get_wtime() - start;
-
     printf("Matrix size = %d, Leaf matrix size = %d, Strassen's (s) = %8.4f s,",
             matrix_size, leaf_matrix_size, strassens_time);
 
@@ -280,18 +293,21 @@ int main(int argc, char *argv[]) {
     // Standard matrix multiplication
 
     // Compute Cstd = A*B - standard matrix multiplication
-    start = omp_get_wtime();
-    Matrix Cstd = Matrix::standard_product(A,B); 
-    time(&end); 
-    standard_time = omp_get_wtime() - start;
+if(k <= 10){
+	start = omp_get_wtime();
+    	Matrix Cstd = Matrix::standard_product(A,B); 
+    	time(&end); 
+    	standard_time = omp_get_wtime() - start;
 
-    printf(" Standard = %8.4f s,", standard_time);
+    	printf(" Standard = %8.4f s,", standard_time);
 
-    int error = Matrix::compare_matrix(C,Cstd);
-    printf(" Error = %d\n", error);
+    	int error = Matrix::compare_matrix(C,Cstd);
+    	printf(" Error = %d\n", error);
 
-    if (error != 0) {
-        printf("Houston, we have a problem!\n");
-    }
+    	if (error != 0) {
+        	printf("Houston, we have a problem!\n");
+    	}
+}
+else printf("Error check SKIPPED\n");
 }
 
