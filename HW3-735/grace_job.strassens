@@ -20,10 +20,30 @@
 module load intel         # load Intel software stack 
 icpx -o strassen_omp.exe -qopenmp strassen_omp.cpp # compile into exe
 export OMP_NUM_THREADS=$SLURM_NTASKS_PER_NODE
-./strassen_omp.exe 10 8
-./strassen_omp.exe 11 8
-./strassen_omp.exe 12 8
-./strassen_omp.exe 13 8
-./strassen_omp.exe 14 8
+./strassen_omp.exe 10 4
+./strassen_omp.exe 10 5
+./strassen_omp.exe 10 6
+./strassen_omp.exe 10 7
+
+./strassen_omp.exe 11 4
+./strassen_omp.exe 11 5
+./strassen_omp.exe 11 6
+./strassen_omp.exe 11 7
+
+./strassen_omp.exe 12 4
+./strassen_omp.exe 12 5
+./strassen_omp.exe 12 6
+./strassen_omp.exe 12 7
+
+./strassen_omp.exe 13 4
+./strassen_omp.exe 13 5
+./strassen_omp.exe 13 6
+./strassen_omp.exe 13 7
+
+./strassen_omp.exe 14 4
+./strassen_omp.exe 14 5
+./strassen_omp.exe 14 6
+./strassen_omp.exe 14 7
+
 
 
