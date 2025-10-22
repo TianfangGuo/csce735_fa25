@@ -18,7 +18,7 @@
 ##First Executable Line
 #
 module load intel         # load Intel software stack 
-#
-
+icpx -o strassen_omp.exe -qopenmp strassen_omp.cpp # compile into exe
+./strassen_omp.exe 10 4
 #
 
