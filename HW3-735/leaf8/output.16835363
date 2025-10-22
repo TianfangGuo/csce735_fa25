@@ -1,0 +1,6 @@
+OMP: Warning #235: OMP_NUM_THREADS: Invalid symbols found. Check the value "".
+Matrix size = 1024, Leaf matrix size = 256, Strassen's (s) =   1.6921 s, Standard =   0.9206 s, Error = 0
+OMP: Warning #235: OMP_NUM_THREADS: Invalid symbols found. Check the value "".
+Matrix size = 2048, Leaf matrix size = 256, Strassen's (s) =  51.9834 s,Error check SKIPPED
+OMP: Warning #235: OMP_NUM_THREADS: Invalid symbols found. Check the value "".
+slurmstepd: error: *** JOB 16835363 ON c733 CANCELLED AT 2025-10-22T16:08:07 ***

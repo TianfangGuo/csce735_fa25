@@ -1,0 +1,5 @@
+Matrix size = 1024, Leaf matrix size = 16, Strassen's (s) =   1.9085 s, Standard =   3.7044 s, Error = 0
+Matrix size = 2048, Leaf matrix size = 16, Strassen's (s) =   7.1517 s,Error check SKIPPED
+Matrix size = 4096, Leaf matrix size = 16, Strassen's (s) =  45.1090 s,Error check SKIPPED
+Matrix size = 8192, Leaf matrix size = 16, Strassen's (s) = 317.6884 s,Error check SKIPPED
+slurmstepd: error: *** JOB 16835244 ON c749 CANCELLED AT 2025-10-22T16:07:47 ***

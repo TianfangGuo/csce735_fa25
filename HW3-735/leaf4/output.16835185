@@ -1,0 +1,5 @@
+Matrix size = 1024, Leaf matrix size = 16, Strassen's (s) =   1.2604 s, Standard =   3.1501 s, Error = 0
+Matrix size = 2048, Leaf matrix size = 16, Strassen's (s) =   6.6126 s,Error check SKIPPED
+Matrix size = 4096, Leaf matrix size = 16, Strassen's (s) =  45.6804 s,Error check SKIPPED
+Matrix size = 8192, Leaf matrix size = 16, Strassen's (s) = 315.5255 s,Error check SKIPPED
+Matrix size = 16384, Leaf matrix size = 16, Strassen's (s) = 2208.9663 s,Error check SKIPPED

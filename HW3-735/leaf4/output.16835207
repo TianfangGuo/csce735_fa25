@@ -1,0 +1,10 @@
+OMP: Info #277: omp_set_nested routine deprecated, please use omp_set_max_active_levels instead.
+Matrix size = 1024, Leaf matrix size = 16, Strassen's (s) =   1.6047 s, Standard =   3.5400 s, Error = 0
+OMP: Info #277: omp_set_nested routine deprecated, please use omp_set_max_active_levels instead.
+Matrix size = 2048, Leaf matrix size = 16, Strassen's (s) =   6.9881 s,Error check SKIPPED
+OMP: Info #277: omp_set_nested routine deprecated, please use omp_set_max_active_levels instead.
+Matrix size = 4096, Leaf matrix size = 16, Strassen's (s) =  45.0671 s,Error check SKIPPED
+OMP: Info #277: omp_set_nested routine deprecated, please use omp_set_max_active_levels instead.
+Matrix size = 8192, Leaf matrix size = 16, Strassen's (s) = 317.6799 s,Error check SKIPPED
+OMP: Info #277: omp_set_nested routine deprecated, please use omp_set_max_active_levels instead.
+Matrix size = 16384, Leaf matrix size = 16, Strassen's (s) = 2211.6393 s,Error check SKIPPED

@@ -1,0 +1,6 @@
+Matrix size = 1024, Leaf matrix size = 16, Strassen's (s) =   2.5046 s, Standard =   3.3963 s, Error = 0
+Matrix size = 2048, Leaf matrix size = 16, Strassen's (s) =  10.7814 s,Error check SKIPPED
+/var/spool/slurmd/job16835059/slurm_script: line 24: 723819 Killed                  ./strassen_omp.exe 12 4
+/var/spool/slurmd/job16835059/slurm_script: line 25: 723853 Killed                  ./strassen_omp.exe 13 4
+/var/spool/slurmd/job16835059/slurm_script: line 26: 723935 Killed                  ./strassen_omp.exe 14 4
+slurmstepd: error: Detected 3 oom_kill events in StepId=16835059.batch. Some of the step tasks have been OOM Killed.
