@@ -9,7 +9,7 @@
 #SBATCH --nodes=1                    #Request 1 node
 #SBATCH --ntasks-per-node=48          #Request 8 tasks/cores per node
 #SBATCH --mem=32G                     #Request 8GB per node 
-#SBATCH --output=output.%j      #Send stdout/err to "output.[jobID]" 
+#SBATCH --output=output_desc.%j      #Send stdout/err to "output.[jobID]" 
 #
 ##OPTIONAL JOB SPECIFICATIONS
 ##SBATCH --mail-type=ALL              #Send email on all job events
@@ -18,7 +18,7 @@
 ##First Executable Line
 #
 module load intel         # load Intel software stack 
-mpiicpx -o qsort_hypercube.exe qsort_hypercube.cpp 
+mpiicpx -o qsort_hypercube_descending.exe qsort_hypercube_descending.cpp 
 
 #
 #mpirun -np 64 ./qsort_hypercube.exe 20480000 0
